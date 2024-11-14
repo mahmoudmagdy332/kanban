@@ -1,81 +1,32 @@
 import React from "react";
 import Box from "./components/Box";
+import { card } from "./types/type";
+import AddForm from "./components/AddForm";
 
 const  App=()=> {
-  const cards=[{  id:1,
-    title:'string',
-    email:'string',
-    mobile:'strin',
-    age:12,
-    status:'Unclaimed'}]
+  const cards: card[] = [
+    { id: 1, title: "Card 1", email: "example@example.com", mobile: "123456789", age: 30, status: "Unclaimed" },
+    { id: 2, title: "Card 2", email: "example2@example.com", mobile: "987654321", age: 25, status: "FirstContact" },
+];
   return (
-    <div className="min-h-screen  bg-[rgb(211,229,237)] p-5">
-      <header className="flex flex-col items-center justify-center text-2xl text-white mb-8">
+    <div className="bg-[#D3E5ED]">
+<div className="min-h-screen   p-5 w-10/12 mx-auto">
+      <header className="flex  items-center  justify-between text-2xl  mb-8 gap-3">
         <b>Kanban Board</b>
+        <AddForm/>
       </header>
 
       <div className="flex flex-row text-white">
         {/* Form Section */}
-        <div className="flex flex-col gap-4 m-8">
-          <b>Form</b>
-          <div>
-            <label htmlFor="title">Title:</label>
-            <input
-              type="text"
-              id="title"
-              name="title"
-              className="ml-2 p-1 border rounded-md"
-            />
-          </div>
-          <div>
-            <label htmlFor="name">Name:</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              className="ml-2 p-1 border rounded-md"
-            />
-          </div>
-          <div>
-            <label htmlFor="age">Age:</label>
-            <input
-              type="text"
-              id="age"
-              name="age"
-              className="ml-2 p-1 border rounded-md"
-            />
-          </div>
-          <div>
-            <label htmlFor="email">Email:</label>
-            <input
-              type="text"
-              id="email"
-              name="email"
-              className="ml-2 p-1 border rounded-md"
-            />
-          </div>
-          <div>
-            <label htmlFor="phone">Phone:</label>
-            <input
-              type="text"
-              id="phone"
-              name="phone"
-              className="ml-2 p-1 border rounded-md"
-            />
-          </div>
-
-          <button className="bg-blue-500 text-white p-2 rounded-md mt-4">
-            Submit
-          </button>
-        </div>
+      
         
         {/* Kanban Board Section */}
 
-          <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 h-full   gap-4">
-          <Box cards={cards}/>
-          <Box />
-          <Box/>
-          <Box/>
+          <div className="grid w-full [&>*:first-child]:bg-transparent [&>*:first-child]:border-[#4E94BF] grid-cols-1 md:grid-cols-2 lg:grid-cols-4 h-full   gap-4">
+          <Box cards={cards} title='Unclaimed'/>
+          <Box cards={cards} title='Unclaimed'/>
+          <Box cards={cards} title='Unclaimed'/>
+          <Box cards={cards} title='Unclaimed'/>
             {/* <div className="flex-1">
               <b>First Contact</b>
               <div className="bg-blue-500 border border-white h-full mt-2"></div>
@@ -92,6 +43,8 @@ const  App=()=> {
 
       </div>
     </div>
+    </div>
+    
   );
 }
 
