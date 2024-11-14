@@ -18,7 +18,7 @@ const AddForm = () => {
       };
   return (
     <div>
-        <button onClick={()=>setIsOpen(true)} className="py-2 px-3 rounded-md bg-black text-white text-nowrap  text-lg">Add Card</button>
+        <button onClick={()=>setIsOpen(true)} className="py-2 px-3 rounded-md hover:bg-white transition-all ease-in-out hover:text-black bg-black text-white text-nowrap  text-lg">Add Member</button>
           
           <div className={`${isopen?'flex':'hidden'} absolute w-screen h-screen left-0 top-0 `}>
             <div className='absolute z-10 w-screen h-screen bg-black opacity-20' onClick={()=>setIsOpen(false)}></div>

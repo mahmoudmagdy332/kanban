@@ -19,3 +19,12 @@ export type form={
 }
 
 
+export type MemberSliceType={
+    Unclaimed:card[];
+    FirstContact:card[];
+    PreparingWorkOffer:card[];
+    SendTherapist:card[];
+
+}
+
+
